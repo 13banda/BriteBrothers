@@ -1,0 +1,17 @@
+.policy {
+    @apply text-secondary opacity-95;
+}
+.policy p {
+    @apply opacity-90 text-lg font-medium mb-3;
+}
+
+.policy section {
+    @apply mb-10;
+}
+
+.policy section h3 {
+    @apply text-xl font-bold my-5;
+}
+.policy section h5 {
+    @apply text-lg font-semibold my-3;
+}

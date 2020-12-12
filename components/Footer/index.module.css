@@ -1,0 +1,5 @@
+
+    .feature {
+        @apply mb-3 hover:text-primary hover:transform hover:translate-x-1 cursor-pointer;
+        
+    }

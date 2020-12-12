@@ -1,0 +1,28 @@
+.terms {
+    @apply text-secondary opacity-95;
+}
+.terms p {
+    @apply opacity-90 text-lg font-medium mb-3;
+}
+
+.terms section {
+    @apply mb-10;
+}
+
+.terms section h3 {
+    @apply text-xl font-bold my-5;
+}
+.terms section h5 {
+    @apply text-lg font-semibold my-3;
+}
+
+
+.termsList {
+    @apply mt-8;
+}
+.termsList > div p {
+    @apply mb-2 ml-3;
+}
+.termsList > div > span {
+    @apply break-normal text-primary text-lg font-medium;
+}
