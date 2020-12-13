@@ -19,7 +19,7 @@ export default function Footer({ children }) {
               <a className={styles.socialBtn} href="https://www.facebook.com/Britebrothers-298629711500714" target="_blank">
                 <span className="ti-facebook"></span>
               </a>
-              <a className={styles.socialBtn} href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw" target="_blank">
+              <a className={styles.socialBtn} href="https://www.instagram.com/britebrothers" target="_blank">
                 <span className="ti-instagram"></span>
               </a>
               <a className={styles.socialBtn} href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw" target="_blank">
