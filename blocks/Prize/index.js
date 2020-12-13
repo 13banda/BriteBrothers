@@ -11,7 +11,7 @@ function PrizeBox(props) {
       <h2 className="text-3xl text-secondary">
         <span>{title}</span>
       </h2>
-      <div className={classNames([hoverBgColor,"p-6 text-center transition-transform ease-in-out duration-500 overflow-hidden cursor-pointer absolute top-0 left-0 flex w-full h-full justify-center items-center text-lg text-white transform scale-0 group-hover:transform group-hover:scale-100"])} >
+      <div className={classNames([hoverBgColor,"p-6 text-center transition-transform ease-in-out duration-1000 overflow-hidden cursor-pointer absolute top-0 left-0 flex w-full h-full justify-center items-center text-lg text-white transform scale-0 group-hover:transform group-hover:scale-100"])} >
         {description + ` Worth ₹ ${price} /-`}
       </div>
     </div>
@@ -91,8 +91,8 @@ export default function PrizeBlock(props) {
           Prize scheme for lucky Draw 2021
         </h3>
         <div className="grid gap-10 grid-cols-1 lg:grid-cols-4 md:grid-cols-3">
-          {prizeList.map((item) => {
-            return <PrizeBox {...item} />;
+          {prizeList.map((item,index) => {
+            return <PrizeBox key={"prize"+index} {...item} />;
           })}
         </div>
       </div>

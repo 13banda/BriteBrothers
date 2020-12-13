@@ -4,12 +4,14 @@ import { useEffect } from "react";
 import Layout from "../components/Layout/index";
 import TicketBlock from "./../blocks/Ticket";
 import PrizeBlock from "./../blocks/Prize";
+import DrawTimer from "../blocks/DrawTimer";
 
 export default function Home() {
   return (
     <Layout>
       <PrizeBlock />
       <TicketBlock />
+      <DrawTimer />
     </Layout>
   );
 }
