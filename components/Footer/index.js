@@ -52,14 +52,6 @@ export default function Footer({ children }) {
             <ul className="mt-5">
               <li className="mb-3">
                 <span className="mb-1 text-sm text-gray-500">
-                  Office Location
-                </span>
-                <p className="break-all">
-                  Rajasthan,India
-                </p>
-              </li>
-              <li className="mb-3">
-                <span className="mb-1 text-sm text-gray-500">
                   Business Phone
                 </span>
                 <p className="text-lg">+91 9887016252</p>
