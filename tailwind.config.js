@@ -16,6 +16,7 @@
    },
    variants: {
      extend: {
+      borderWidth: ['hover', 'focus'],
       transform: ['hover', 'focus','responsive',"group-hover"],
      },
    },

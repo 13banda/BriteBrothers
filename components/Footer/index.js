@@ -16,16 +16,13 @@ export default function Footer({ children }) {
               each player of a fair playing lottery.
             </p>
             <div className="mt-4 flex space-x-3">
-              <a className="py-1 px-2 text-primary border border-primary rounded-sm justify-center hover:bg-primary hover:text-white hover:transform hover:-translate-y-1" href="https://www.facebook.com/Britebrothers-298629711500714">
+              <a className={styles.socialBtn} href="https://www.facebook.com/Britebrothers-298629711500714" target="_blank">
                 <span className="ti-facebook"></span>
               </a>
-              <a className="py-1 px-2 text-primary border border-primary rounded-sm justify-center hover:bg-primary hover:text-white hover:transform hover:-translate-y-1" href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw">
+              <a className={styles.socialBtn} href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw" target="_blank">
                 <span className="ti-instagram"></span>
               </a>
-              <a className="py-1 px-2 text-primary border border-primary rounded-sm justify-center hover:bg-primary hover:text-white hover:transform hover:-translate-y-1">
-                <span className="ti-google"></span>
-              </a>
-              <a className="py-1 px-2 text-primary border border-primary rounded-sm justify-center hover:bg-primary hover:text-white hover:transform hover:-translate-y-1" href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw">
+              <a className={styles.socialBtn} href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw" target="_blank">
                 <span className="ti-youtube"></span>
               </a>
             </div>

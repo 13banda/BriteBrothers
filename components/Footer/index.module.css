@@ -1,5 +1,7 @@
 
     .feature {
         @apply mb-3 hover:text-primary hover:transform hover:translate-x-1 cursor-pointer;
-        
+    }
+    .socialBtn {
+        @apply py-1 px-2 text-white hover:bg-primary shadow-sm bg-secondary  rounded-full justify-center ;
     }
