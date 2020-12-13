@@ -55,7 +55,7 @@ export default function Footer({ children }) {
                   Office Location
                 </span>
                 <p className="break-all">
-                  17p.s., Raisinghnagar, Rajasthan,India
+                  Rajasthan,India
                 </p>
               </li>
               <li className="mb-3">

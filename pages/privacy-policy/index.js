@@ -175,7 +175,7 @@ export default function privacyPolicy() {
             </p>
           </section>
           <p className="mt-16">Brite Brothers</p>
-          <p>17p.s., Raisinghnagar, Rajasthan, India</p>
+          <p>Rajasthan, India</p>
         </div>
       </div>
     </Layout>
