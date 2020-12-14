@@ -21,7 +21,7 @@ function saveData(data){
           return;
         }
         records.forEach(function (record) {
-            console.log(record)
+            // console.log(record)
           console.log(record.getId());
         });
       });
@@ -29,10 +29,12 @@ function saveData(data){
 function sendMailToUser(data){
     const msg = {
         to: data.email,
-        from: "wwaheguru9509088985@gmail.com", //verified sender
-         subject: "Sending with sendgrid is fun",
-         text: "and easy to do anywhere, even with Node.js",
-         html: '<strong>and easy to do anywhere, even with Node.js</strong>'
+        from: process.env.SENDGRID_SENDER, //verified sender
+        templateId: process.env.SENDGRID_MESSAGE_TEMPLATE_ID_BRITEBROTHERS,         
+        dynamicTemplateData:{
+        ...data,
+        createdAt: (new Date()).toDateString()
+    }
     }
     sgMail.send(msg)
     .then(() => {
@@ -40,6 +42,7 @@ function sendMailToUser(data){
     })
     .catch((error) => {
         console.error(error);
+        console.log(error.messsage)
     })
 }
 sendMailToUser({ email: 'wwaheguru9509088985@gmail.com'})

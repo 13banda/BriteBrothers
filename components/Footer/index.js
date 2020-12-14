@@ -65,7 +65,7 @@ export default function Footer({ children }) {
         <div className="flex justify-center pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-center">
           <div className="mt-2">
             Copyright © 2020.{" "}
-            <span className="text-primary">Harvinder Singh</span> All Rights
+            <span className="text-primary">Brite Brothers</span> All Rights
             Reserved.
           </div>
         </div>
