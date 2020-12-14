@@ -6,8 +6,43 @@ const AIRTABLE_MAIN_TABLE = process.env.AIRTABLE_MAIN_TABLE;
 var rn = require('random-number');
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_LUCKYDRAW_BASE_ID);
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
+function saveData(data){
+    base(AIRTABLE_MAIN_TABLE).create([
+        {
+          "fields": data,
+        },
+      ], function(err, records) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        records.forEach(function (record) {
+            console.log(record)
+          console.log(record.getId());
+        });
+      });
+}
+function sendMailToUser(data){
+    const msg = {
+        to: data.email,
+        from: "wwaheguru9509088985@gmail.com", //verified sender
+         subject: "Sending with sendgrid is fun",
+         text: "and easy to do anywhere, even with Node.js",
+         html: '<strong>and easy to do anywhere, even with Node.js</strong>'
+    }
+    sgMail.send(msg)
+    .then(() => {
+        console.log("Email send")
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+}
+sendMailToUser({ email: 'wwaheguru9509088985@gmail.com'})
 export default function PaymentHandler(req,res){
     let reqBody = req.body, signature = req.headers["x-razorpay-signature"];
     if(reqBody.event === 'order.paid'){
@@ -26,20 +61,8 @@ export default function PaymentHandler(req,res){
             ticketNumber:ticketNumber()+"", 
         }
         console.log(data)
-        base(AIRTABLE_MAIN_TABLE).create([
-            {
-              "fields": data,
-            },
-          ], function(err, records) {
-            if (err) {
-              console.error(err);
-              return;
-            }
-            records.forEach(function (record) {
-                console.log(record)
-              console.log(record.getId());
-            });
-          });
+        saveData(data);
+        sendMailToUser(data)
         if(signature){
             console.log("is signature valid");
             console.log(razorpay.validateWebhookSignature(reqBody, signature, WEBHOOK_SECRET));
