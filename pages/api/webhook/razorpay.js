@@ -9,7 +9,6 @@ var base = new Airtable({apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_LUCKYDRAW_BAS
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-
 function saveData(data){
     base(AIRTABLE_MAIN_TABLE).create([
         {
@@ -29,12 +28,15 @@ function saveData(data){
 function sendMailToUser(data){
     const msg = {
         to: data.email,
-        from: process.env.SENDGRID_SENDER, //verified sender
+        from: {
+            email: process.env.SENDGRID_SENDER, //verified sender
+            name: process.env.SENDGRID_SENDER_NAME
+        },
         templateId: process.env.SENDGRID_MESSAGE_TEMPLATE_ID_BRITEBROTHERS,         
         dynamicTemplateData:{
         ...data,
         createdAt: (new Date()).toDateString()
-    }
+     }
     }
     sgMail.send(msg)
     .then(() => {
@@ -45,7 +47,6 @@ function sendMailToUser(data){
         console.log(error.messsage)
     })
 }
-sendMailToUser({ email: 'wwaheguru9509088985@gmail.com'})
 export default function PaymentHandler(req,res){
     let reqBody = req.body, signature = req.headers["x-razorpay-signature"];
     if(reqBody.event === 'order.paid'){
