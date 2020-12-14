@@ -1,3 +1,6 @@
+import Layout from "./../../components/Layout/index";
+import Link from "next/link";
+
 export default function AboutUs(props) {
   return (
     <Layout>
