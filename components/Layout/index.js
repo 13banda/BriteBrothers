@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         <meta name="msapplication-navbutton-color" content="#1FC157" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#1FC157" />
         <title>{siteTitle}</title>
-        <meta name="keywords" content="lucky draw, brite brothers, lottery,201\21" lang="en-us" />
+        <meta name="keywords" content="lucky draw, brite brothers, lottery,2021" lang="en-us" />
         <meta name="description" content="brite brother lucky draw 2021, win big prize just in 200, get your ticket now, Stay tuned." />
         <link rel="icon" type="image/png" sizes="56x56" href="logo.svg" alt="brite brothers Logo" />
         <meta

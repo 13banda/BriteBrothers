@@ -19,6 +19,8 @@ function saveData(data){
           console.error(err);
           return;
         }
+
+        sendMailToUser(data)
         records.forEach(function (record) {
             // console.log(record)
           console.log(record.getId());
@@ -66,12 +68,11 @@ export default function PaymentHandler(req,res){
         }
         console.log(data)
         saveData(data);
-        sendMailToUser(data)
         if(signature){
             console.log("is signature valid");
-            console.log(razorpay.validateWebhookSignature(reqBody, signature, WEBHOOK_SECRET));
+            console.log(razorpay.validateWebhookSignature(JSON.stringify(reqBody, null, 2), signature, WEBHOOK_SECRET));
         }
     }
     
-    return res.send("thanks")
+    res.send("thanks")
 }

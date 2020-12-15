@@ -1,0 +1,22 @@
+
+.aws-btn {
+    --content-background-color: @apply bg-gray-50;
+    --slider-height-percentage: 29%;
+    --slider-transition-duration: 525ms;
+    --organic-arrow-thickness: 4px;
+    --organic-arrow-border-radius: 0px;
+    --organic-arrow-height: 40px;
+    --organic-arrow-color: #519c97;
+    --control-button-width: 10%;
+    --control-button-height: 25%;
+    --control-button-background: transparent;
+    --control-bullet-color: #5fb7b2;
+    --control-bullet-active-color: #519c97;
+    --loader-bar-color: #851515;
+    --loader-bar-height: 0px;
+    --timer-height: 0px !important;
+    --timer-background-color: var(--content-background-color)
+}
+.aws-btn .awssld__content {
+    @apply bg-gray-50;
+}
