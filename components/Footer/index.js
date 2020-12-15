@@ -66,7 +66,7 @@ export default function Footer({ children }) {
                 <span className="mb-1 text-sm text-gray-500">
                   Business Phone
                 </span>
-                <a href="https://wa.me/919887016252?text=Hi,%20I%20want%20to%20know%20aboout%20Lucky%20draw" target="_blank">
+                <a href="https://wa.me/919887016252?text=Hi,%20I%20want%20to%20know%20about%20Lucky%20draw" target="_blank">
                   <p className="text-lg">
                     +91 9887016252{" "}
                     <img
