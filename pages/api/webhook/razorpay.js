@@ -23,7 +23,7 @@ async function sendSMS(data){
       flashsms:0,
       number:data.phone,
       text: message,
-      route=1
+      route:1
     },
     responseType: 'json'
   }
