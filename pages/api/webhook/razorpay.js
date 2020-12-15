@@ -10,6 +10,7 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 function saveData(data){
+   return new Promise(resolve => {
     base(AIRTABLE_MAIN_TABLE).create([
         {
           "fields": data,
@@ -19,37 +20,34 @@ function saveData(data){
           console.error(err);
           return;
         }
-
-        sendMailToUser(data)
+        resolve(records)
         records.forEach(function (record) {
             // console.log(record)
           console.log(record.getId());
         });
       });
+   })
 }
-function sendMailToUser(data){
-    const msg = {
-        to: data.email,
-        from: {
-            email: process.env.SENDGRID_SENDER, //verified sender
-            name: process.env.SENDGRID_SENDER_NAME
-        },
-        templateId: process.env.SENDGRID_MESSAGE_TEMPLATE_ID_BRITEBROTHERS,         
-        dynamicTemplateData:{
-        ...data,
-        createdAt: (new Date()).toDateString()
-     }
+async function sendMailToUser(data){
+    try {
+        const msg = {
+            to: data.email,
+            from: {
+                email: process.env.SENDGRID_SENDER, //verified sender
+                name: process.env.SENDGRID_SENDER_NAME
+            },
+            templateId: process.env.SENDGRID_MESSAGE_TEMPLATE_ID_BRITEBROTHERS,         
+            dynamicTemplateData:{
+            ...data,
+            createdAt: (new Date()).toDateString()
+        }
+      }
+     await sgMail.send(msg)   
+    } catch (error) {
+     console.error(error);        
     }
-    sgMail.send(msg)
-    .then(() => {
-        console.log("Email send")
-    })
-    .catch((error) => {
-        console.error(error);
-        console.log(error.messsage)
-    })
 }
-export default function PaymentHandler(req,res){
+export default async function PaymentHandler(req,res){
     let reqBody = req.body, signature = req.headers["x-razorpay-signature"];
     if(reqBody.event === 'order.paid'){
         let paymentPayload = reqBody.payload.payment.entity;
@@ -66,8 +64,9 @@ export default function PaymentHandler(req,res){
             address: paymentPayload.notes.address,
             ticketNumber:ticketNumber()+"", 
         }
+        await saveData(data);
+        await sendMailToUser(data)
         console.log(data)
-        saveData(data);
         if(signature){
             console.log("is signature valid");
             console.log(razorpay.validateWebhookSignature(JSON.stringify(reqBody, null, 2), signature, WEBHOOK_SECRET));
