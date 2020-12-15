@@ -10,6 +10,7 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const got = require("got")
+
 async function sendSMS(data){
   let message = `Dear ${data.name}. You have successfully registered for Brite Brothers Lucky Draw 2021. you lottery number is ${data.ticketNumber}.`
   const token = process.env.SMSHUB_API_KEY
@@ -22,7 +23,7 @@ async function sendSMS(data){
       flashsms:0,
       number:data.phone,
       text: message,
-      route="Normal Connect"
+      route=1
     },
     responseType: 'json'
   }
