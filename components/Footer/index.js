@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "../Logo";
 import styles from "./index.module.css";
+import Image from "next/image";
 
 export default function Footer({ children }) {
   return (
@@ -16,13 +17,25 @@ export default function Footer({ children }) {
               each player of a fair playing lottery.
             </p>
             <div className="mt-4 flex space-x-3">
-              <a className={styles.socialBtn} href="https://www.facebook.com/Britebrothers-298629711500714" target="_blank">
+              <a
+                className={styles.socialBtn}
+                href="https://www.facebook.com/Britebrothers-298629711500714"
+                target="_blank"
+              >
                 <span className="ti-facebook"></span>
               </a>
-              <a className={styles.socialBtn} href="https://www.instagram.com/britebrothers" target="_blank">
+              <a
+                className={styles.socialBtn}
+                href="https://www.instagram.com/britebrothers"
+                target="_blank"
+              >
                 <span className="ti-instagram"></span>
               </a>
-              <a className={styles.socialBtn} href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw" target="_blank">
+              <a
+                className={styles.socialBtn}
+                href="https://youtube.com/channel/UCjECRQ7OJGJZprMADINCaxw"
+                target="_blank"
+              >
                 <span className="ti-youtube"></span>
               </a>
             </div>
@@ -45,17 +58,29 @@ export default function Footer({ children }) {
             </ul>
           </div>
           <div className="p-5 w-68">
-            <div id="about" className="uppercase font-bold text-xl">Contact us</div>
+            <div id="about" className="uppercase font-bold text-xl">
+              Contact us
+            </div>
             <ul className="mt-5">
               <li className="mb-3">
                 <span className="mb-1 text-sm text-gray-500">
                   Business Phone
                 </span>
-                <p className="text-lg">+91 9887016252</p>
+                <a href="https://wa.me/919887016252?text=Hi,%20I%20want%20to%20know%20aboout%20Lucky%20draw" target="_blank">
+                  <p className="text-lg">
+                    +91 9887016252{" "}
+                    <img
+                      className="inline-block align-text-bottom ml-1"
+                      height={24}
+                      width={24}
+                      src="/svg/whatsapp-icon.svg"
+                    />
+                  </p>
+                </a>
               </li>
               <li className="mb-3">
                 <span className="mb-1 text-sm text-gray-500">Support mail</span>
-                <p>hssehmbi1322@gmail.com</p>
+                <p>hello@britebrothers.in</p>
               </li>
             </ul>
           </div>

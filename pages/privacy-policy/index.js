@@ -43,7 +43,7 @@ export default function privacyPolicy() {
               If after you opt-in, you change your mind, you may withdraw your
               consent for us to contact you, for the continued collection, use
               or disclosure of your information, at anytime, by contacting us at
-              hssehmbi1322@gmail.com
+              support@britebrothers.in
             </p>
           </section>
           <section>
@@ -171,7 +171,7 @@ export default function privacyPolicy() {
               If you would like to: access, correct, amend or delete any
               personal information we have about you, register a complaint, or
               simply want more information contact our Privacy Compliance
-              Officer at hssehmbi1322@gmail.com .
+              Officer at support@britebrothers.in.
             </p>
           </section>
           <p className="mt-16">Brite Brothers</p>

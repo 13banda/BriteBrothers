@@ -152,7 +152,7 @@ export default function privacyPolicy() {
             <h3>CONTACT INFORMATION</h3>
             <p>
               Questions about the Terms of Service should be sent to us at
-              hssehmbi1322@gmail.com .
+              support@britebrothers.in.
             </p>
           </section>
         </div>
