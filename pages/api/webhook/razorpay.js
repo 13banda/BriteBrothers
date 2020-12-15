@@ -9,6 +9,26 @@ var base = new Airtable({apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_LUCKYDRAW_BAS
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const got = require("got")
+async function sendSMS(data){
+  let message = `Dear ${data.name}. You have successfully registered for Brite Brothers Lucky Draw 2021. you lottery number is ${data.ticketNumber}.`
+  const token = process.env.SMSHUB_API_KEY
+  let options = {
+    searchParams: {
+      APIKey:token,
+      senderid:"BRIBRO",
+      channel:2,
+      DCS:0,
+      flashsms:0,
+      number:data.phone,
+      text: message,
+      route="Normal Connect"
+    },
+    responseType: 'json'
+  }
+ let { body } = await got('https://www.smsgatewayhub.com/api/mt/SendSMS', options);
+ console.log("sms sent to "+data.phone,body) 
+}
 function saveData(data){
    return new Promise(resolve => {
     base(AIRTABLE_MAIN_TABLE).create([
@@ -65,6 +85,7 @@ export default async function PaymentHandler(req,res){
             ticketNumber:ticketNumber()+"", 
         }
         await saveData(data);
+        await sendSMS(data);
         await sendMailToUser(data)
         console.log(data)
         if(signature){

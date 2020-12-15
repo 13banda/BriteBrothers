@@ -11,6 +11,7 @@
     "@sendgrid/mail": "^7.4.0",
     "airtable": "^0.10.1",
     "autoprefixer": "^10.0.4",
+    "got": "^11.8.1",
     "next": "^10.0.0",
     "postcss": "^8.1.14",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -18,11 +19,8 @@
     "random-number": "^0.0.9",
     "razorpay": "^2.0.6",
     "react": "16.13.1",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "16.13.1",
-    "tailwindcss": "^2.0.1",
-    "react-awesome-slider": "^4.1.0"
-  },
-  "devDependencies": {
-    
+    "tailwindcss": "^2.0.1"
   }
 }
