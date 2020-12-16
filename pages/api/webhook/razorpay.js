@@ -12,7 +12,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const got = require("got")
 
 async function sendSMS(data){
-  let message = `Dear ${data.name}. You have successfully registered for Brite Brothers Lucky Draw 2021. your lottery number is ${data.ticketNumber}.`
+  let message = `Dear ${data.name}. You have successfully registered for Brite Brothers Lucky Draw 2021. your lottery number is ${data.ticketNumber}. https://britebrothers.in`
   const token = process.env.SMSHUB_API_KEY
   let options = {
     searchParams: {
