@@ -11,7 +11,7 @@ import Image from "next/image";
     opacity: 0.5; */
 export default function HowToStart(props) {
   return (
-    <section className=" text-gray-700 body-font border-t border-gray-100">
+    <section className=" text-gray-700 body-font border-t border-gray-100 ">
       <div
         className="w-full bg-cover bg-fixed bg-center bg-opacity-10"
         style={{
@@ -25,7 +25,7 @@ export default function HowToStart(props) {
               <h1 className="font-bold text-secondary text-5xl md:text-5xl leading-tight mb-4">
                 How It Works
               </h1>
-              <p className="text-gray-400 md:text-xl md:px-48 ">
+              <p className="text-gray-400 md:text-xl md:px-48 break-words">
                 Brite Brothers is the best way to play these exciting lotteries
                 from anywhere in the world.
               </p>
@@ -47,7 +47,7 @@ export default function HowToStart(props) {
                   <h2 className="text-2xl font-semibold text-secondary title-font mb-4">
                     Buy Ticket
                   </h2>
-                  <p className="leading-relaxed text-base">
+                  <p className="leading-relaxed text-base break-words">
                    Complete your purchase.
                   </p>
                 </div>
@@ -68,7 +68,7 @@ export default function HowToStart(props) {
                   <h2 className="text-2xl font-semibold text-secondary title-font mb-4">
                     Get Your Number
                   </h2>
-                  <p className="leading-relaxed text-base">
+                  <p className="leading-relaxed text-base break-normal">
                     you will get lottery number on your e-mail and mobile.
                   </p>
                 </div>
