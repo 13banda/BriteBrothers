@@ -18,7 +18,7 @@ const prizeList = [
     description: "Freez",
     price: "12,000",
     hoverBgColor: "bg-red-600",
-    imageUrl: "/images/freez.jpg",
+    imageUrl: "/images/referigerator.png",
   },
 
   {
@@ -139,7 +139,7 @@ export default function ProductSlider(props) {
     ],
   };
   return (
-    <div className="py-20 flex justify-center ">
+    <div className="py-20 flex justify-center outline-none ">
       <div className="container mx-auto px-6 text-center md:max-w-6xl">
         <h2 className="text-4xl font-bold mb-11 text-secondary">
           Get lottery Ticket just in 200/- and win big prize

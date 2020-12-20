@@ -8,6 +8,7 @@ import DrawTimer from "../blocks/DrawTimer";
 import Hero from "./../blocks/Hero";
 import PayNowBtn from "../components/PayNowBtn";
 import ProductSlider from "../blocks/ProductSlider";
+import HowToStart from "../blocks/HowToStart";
 
 export default function Home() {
   return (
@@ -42,7 +43,11 @@ export default function Home() {
       </div>
       <DrawTimer />
       <ProductSlider />
-   {/*    <Hero /> */}
+      <HowToStart />
+      {/*    <Hero /> */}
+      {/* component */}
+      {/* This is an example component */}
+
     </Layout>
   );
 }
