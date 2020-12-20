@@ -2,7 +2,6 @@ import Link from "next/link";
 import Logo from "../Logo";
 import classNames from "classnames";
 import { useState } from "react";
-import GetTicketBtn from "./../GetTicketBtn";
 
 function MenuBar(props) {
   return (
@@ -24,7 +23,6 @@ function MenuBar(props) {
           </a>
         </Link>
       </div>
-     <GetTicketBtn />
     </nav>
   );
 }

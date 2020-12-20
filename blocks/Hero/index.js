@@ -4,7 +4,6 @@ import classNames from "classnames";
 export default function PrizeBlock(props) {
   return (
     <div>
-      {/* This is an example component */}
       <div>
         <div className="bg-indigo-900 md:overflow-hidden">
           <div className="px-4 py-20 md:py-4">
