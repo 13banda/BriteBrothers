@@ -30,6 +30,20 @@ async function sendSMS(data){
  let { body } = await got('https://www.smsgatewayhub.com/api/mt/SendSMS', options);
  console.log("sms sent to "+data.phone,body) 
 }
+function isPaymentExists(paymentId){
+ return new Promise(resolve => {
+  base(AIRTABLE_MAIN_TABLE).select({
+      view: 'Grid view',
+      filterByFormula: "paymentId = '"+paymentId+"'"
+  }).firstPage(function(err, records) {
+    if(err){
+      resolve(false);
+      return;
+    } 
+      resolve(records.length); 
+  });
+ })
+}
 function saveData(data){
    return new Promise(resolve => {
     base(AIRTABLE_MAIN_TABLE).create([
@@ -85,15 +99,17 @@ export default async function PaymentHandler(req,res){
             address: paymentPayload.notes.address,
             ticketNumber:ticketNumber()+"", 
         }
-        await saveData(data);
-        await sendSMS(data);
-        await sendMailToUser(data)
-        console.log(data)
+        const isAlreadyPaymentRecieved = await isPaymentExists(data.paymentId);
+        if(!isAlreadyPaymentRecieved){
+          await saveData(data);
+          await sendSMS(data);
+          await sendMailToUser(data)
+        }
         if(signature){
             console.log("is signature valid");
             console.log(razorpay.validateWebhookSignature(JSON.stringify(reqBody, null, 2), signature, WEBHOOK_SECRET));
         }
     }
     
-    res.send("thanks")
+    res.status(200).send("thanks")
 }

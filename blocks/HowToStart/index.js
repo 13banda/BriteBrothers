@@ -36,7 +36,7 @@ export default function HowToStart(props) {
                   01
                 </h3>
                 <div className="bg-white px-6 py-12 rounded-lg">
-                  <div class="w-20 h-20 inline-flex items-center justify-center mb-10 flex-shrink-0">
+                  <div className="w-20 h-20 inline-flex items-center justify-center mb-10 flex-shrink-0">
                     <Image
                       width={150}
                       height={150}
@@ -57,7 +57,7 @@ export default function HowToStart(props) {
                   02
                 </h3>
                 <div className="bg-white p-6 rounded-lg">
-                  <div class="w-20 h-20 inline-flex items-center justify-center mb-10 flex-shrink-0">
+                  <div className="w-20 h-20 inline-flex items-center justify-center mb-10 flex-shrink-0">
                     <Image
                       width={150}
                       height={150}
@@ -78,7 +78,7 @@ export default function HowToStart(props) {
                   03
                 </h3>
                 <div className="bg-white p-6 rounded-lg">
-                  <div class="w-20 h-20 inline-flex items-center justify-center mb-10 flex-shrink-0">
+                  <div className="w-20 h-20 inline-flex items-center justify-center mb-10 flex-shrink-0">
                     <Image
                       width={150}
                       height={150}
