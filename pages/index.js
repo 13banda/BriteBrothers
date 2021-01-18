@@ -9,6 +9,7 @@ import Hero from "./../blocks/Hero";
 import PayNowBtn from "../components/PayNowBtn";
 import ProductSlider from "../blocks/ProductSlider";
 import HowToStart from "../blocks/HowToStart";
+import ResultBlock from "../blocks/Results";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <DrawTimer />
+      <ResultBlock />
       <ProductSlider />
       <HowToStart />
       {/*    <Hero /> */}

@@ -16,6 +16,7 @@
    },
    variants: {
      extend: {
+      backgroundColor: ['even','odd'],
       borderWidth: ['hover', 'focus'],
       transform: ['hover', 'focus','responsive',"group-hover"],
      },
